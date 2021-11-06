@@ -8,52 +8,63 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: LayoutBuilder(builder: (context, BoxConstraints constraints) {
-        final double _height = Get.height;
-        final double _width = Get.width;
-        return Column(
-          children: [
-            SizedBox(
-              height: Get.height,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    const EmployeeDetailsCard(),
-                    SizedBox(
-                      height: Get.height * 0.02,
-                    ),
-                    Expanded(
-                        child: SizedBox(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const PersonalDetailsCard(),
-                          SizedBox(width: _width * 0.05),
-                          Expanded(
-                            child: SizedBox(
-                              width: _width * 0.6,
-                              height: _height,
-                              child: const ProjectDetailsCard(),
-                            ),
-                          ),
-                        ],
+    return Scaffold(
+      floatingActionButton: Tooltip(
+        message: "add a new project",
+        child: FloatingActionButton.extended(
+          extendedPadding: EdgeInsets.symmetric(horizontal: 24.0),
+          backgroundColor: const Color(0xff4c5c78),
+          icon: const Icon(Icons.add),
+          label: Text(
+            "Add",
+            style: GoogleFonts.poppins(
+              fontSize: 18.0,
+            ),
+          ),
+          onPressed: () {},
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: LayoutBuilder(builder: (context, BoxConstraints constraints) {
+          final double _height = Get.height;
+          final double _width = Get.width;
+          return Column(
+            children: [
+              SizedBox(
+                height: Get.height,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      const EmployeeDetailsCard(),
+                      SizedBox(
+                        height: Get.height * 0.02,
                       ),
-                    ))
-                  ],
+                      Expanded(
+                          child: SizedBox(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const PersonalDetailsCard(),
+                            SizedBox(width: _width * 0.05),
+                            Expanded(
+                              child: SizedBox(
+                                width: _width * 0.6,
+                                height: _height,
+                                child: const ProjectDetailsCard(),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ))
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8.0),
-              height: _height * 0.2,
-              width: _width,
-              color: Colors.orange,
-            )
-          ],
-        );
-      }),
+            ],
+          );
+        }),
+      ),
     );
   }
 }
@@ -77,7 +88,10 @@ class EmployeeDetailsCard extends StatelessWidget {
                 height: _height * 0.17,
                 width: 200,
                 color: Colors.blueGrey[900],
-                child: Image.asset("assets/logo.png"),
+                child: Image.asset(
+                  "assets/profile.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(
@@ -384,7 +398,7 @@ class _ProjectDetailsCardState extends State<ProjectDetailsCard>
                       enableFeedback: false,
                       indicator: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
-                        color: Colors.blueGrey[900],
+                        color: const Color(0xff4c5c78),
                       ),
                       tabs: [
                         Text(
