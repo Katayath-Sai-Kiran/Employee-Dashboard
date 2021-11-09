@@ -12,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
       floatingActionButton: Tooltip(
         message: "add a new project",
         child: FloatingActionButton.extended(
-          extendedPadding: EdgeInsets.symmetric(horizontal: 24.0),
+          extendedPadding: const EdgeInsets.symmetric(horizontal: 24.0),
           backgroundColor: const Color(0xff4c5c78),
           icon: const Icon(Icons.add),
           label: Text(
@@ -21,7 +21,8 @@ class ProfileScreen extends StatelessWidget {
               fontSize: 18.0,
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+          },
         ),
       ),
       body: SingleChildScrollView(

@@ -104,7 +104,7 @@ class _AttendenceScreenState extends State<AttendenceScreen>
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              "Productivity in current month",
+                                              "Attendence in current month",
                                               style: GoogleFonts.roboto(
                                                 fontSize: 22.0,
                                               ),
@@ -365,7 +365,7 @@ class CustomDayCards extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Card(
-                  color:const  Color(0xffc3c6c6),
+                  color: const Color(0xffc3c6c6),
                   child: SizedBox(
                     height: _height * 0.08,
                     width: _width * 0.08,
@@ -386,59 +386,39 @@ class CustomDayCards extends StatelessWidget {
                     ),
                   )),
               SizedBox(
-                height: _height * 0.08,
                 width: _width * 0.1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Flexible(
-                        child: Text("Productive",
-                            style: TextStyle(
-                              letterSpacing: 1.0,
-                              fontWeight: FontWeight.w700,
-                              color: textColor,
-                            )),
-                      ),
-                      const SizedBox(
-                        height: 8.0,
-                      ),
-                      const Chip(
-                        label: Flexible(
-                          child: Text("80%"),
-                        ),
-                      ),
-                    ],
-                  ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text("Productive",
+                        style: TextStyle(
+                          letterSpacing: 1.0,
+                          fontWeight: FontWeight.w700,
+                          color: textColor,
+                        )),
+                    const Flexible(
+                      child: Text("80%"),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
-                height: _height * 0.08,
                 width: _width * 0.1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Flexible(
-                          child: Text("Productive Time",
-                              style: TextStyle(
-                                letterSpacing: 1.0,
-                                fontWeight: FontWeight.w700,
-                                color: textColor,
-                              ))),
-                      const SizedBox(
-                        height: 8.0,
-                      ),
-                      const Chip(label: Text("4h 10m")),
-                    ],
-                  ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("Productive Time",
+                        style: TextStyle(
+                          letterSpacing: 1.0,
+                          fontWeight: FontWeight.w700,
+                          color: textColor,
+                        )),
+                    const Text("4h 10m")
+                  ],
                 ),
               ),
               SizedBox(
-                height: _height * 0.08,
                 width: _width * 0.1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
