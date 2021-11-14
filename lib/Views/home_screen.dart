@@ -24,8 +24,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     const ProfileScreen(),
     const AttendenceScreen(),
     const PlaySlipScreen(),
-    const LeaveFormScreen(),
-    const ComplientScreen(),
+    LeaveFormScreen(),
+    ComplientScreen(),
   ];
 
   @override

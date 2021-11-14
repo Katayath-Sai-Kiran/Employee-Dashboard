@@ -21,8 +21,7 @@ class ProfileScreen extends StatelessWidget {
               fontSize: 18.0,
             ),
           ),
-          onPressed: () {
-          },
+          onPressed: () {},
         ),
       ),
       body: SingleChildScrollView(

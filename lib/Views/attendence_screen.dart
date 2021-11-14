@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AttendenceScreen extends StatefulWidget {
@@ -45,180 +46,146 @@ class _AttendenceScreenState extends State<AttendenceScreen>
       final double _width = constraints.maxWidth;
       return Scaffold(
         body: SizedBox(
-          height: _height,
           width: _width,
-          child: Row(
-            children: [
-              SizedBox(
-                width: _width * 0.6,
-                height: _height,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
+          height: _height,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: _height * 0.35,
+                  width: _width,
+                  child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12.0),
-                        child: Text(
-                          "Working Productivity",
-                          style: GoogleFonts.roboto(
-                            fontSize: 32.0,
-                          ),
-                        ),
-                      ),
-                      CustomDayCards(
-                        constraints: constraints,
-                        cardColor: const Color(0xff4c5c78),
-                        textColor: Colors.black54,
-                      ),
-                      CustomDayCards(
-                        constraints: constraints,
-                        cardColor: const Color(0xff4c5c78),
-                        textColor: Colors.white70,
-                      ),
-                      CustomDayCards(
-                        constraints: constraints,
-                        cardColor: const Color(0xff4c5c78),
-                        textColor: Colors.white70,
-                      ),
-                      Expanded(
-                        child: SizedBox(
-                          width: _width * 0.6,
-                          height: _height,
-                          child: DefaultTabController(
-                            length: 2,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(0.0),
-                                  child: Container(
-                                      alignment: Alignment.centerLeft,
-                                      height: _height * 0.07,
-                                      width: _width * 0.6,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              "Attendence in current month",
-                                              style: GoogleFonts.roboto(
-                                                fontSize: 22.0,
-                                              ),
-                                            ),
-                                            Container(
-                                              width: _width * 0.15,
-                                              height: _height * 0.04,
-                                              decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xff4c5c78),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0)),
-                                              child: TabBar(
-                                                  indicator: BoxDecoration(
-                                                      color: const Color(
-                                                          0xfff68554),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0)),
-                                                  controller: _tabController,
-                                                  tabs: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                      child:
-                                                          const Text("Month"),
-                                                    ),
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                      child: const Text("Week"),
-                                                    ),
-                                                  ]),
-                                            ),
-                                          ],
-                                        ),
-                                      )),
-                                ),
-                                SizedBox(
-                                  height: _height * 0.45,
-                                  child: TabBarView(
-                                      controller: _tabController,
-                                      children: [
-                                        MonthCalender(
-                                          height: _height,
-                                          width: _width,
-                                        ),
-                                        WeekCalender(
-                                          height: _height,
-                                          width: _width,
-                                        ),
-                                      ]),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                      Image.asset(
+                        "assets/logo.png",
+                        fit: BoxFit.cover,
                       ),
                     ],
                   ),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 28.0),
+                const SizedBox(
+                  height: 10,
+                ),
+                Expanded(
                   child: SizedBox(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: _height * 0.4,
-                          width: _width,
-                          child: Container(
-                            color: Colors.black,
-                          ),
-                        ),
-                        Expanded(
-                            child: SizedBox(
-                          height: _height,
-                          width: _width,
-                          child: Column(
+                    width: _width,
+                    height: _height * 0.6,
+                    child: DefaultTabController(
+                      length: 2,
+                      child: Row(
+                        children: [
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Text("Mon 12 oct",
-                                    style: GoogleFonts.roboto(
-                                      fontSize: 18.0,
-                                    )),
-                              ),
                               Card(
+                                color: const Color(0xfff68554),
                                 elevation: 8.0,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Expanded(
-                                    child: Container(
-                                      width: _width * 0.4,
-                                      height: _height * 0.4,
-                                      color: Colors.white,
-                                    ),
+                                child: Container(
+                                  alignment: Alignment.centerLeft,
+                                  height: _height * 0.07,
+                                  width: _width * 0.5,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      IconButton(
+                                          onPressed: () {},
+                                          icon: const Icon(
+                                            Icons.chevron_left,
+                                            color: Colors.white,
+                                          )),
+                                      Text(
+                                        "Otcober 2021",
+                                        style: GoogleFonts.roboto(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w400,
+                                            letterSpacing: 1.0),
+                                      ),
+                                      IconButton(
+                                          onPressed: () {},
+                                          icon: const Icon(
+                                            Icons.chevron_right,
+                                            color: Colors.white,
+                                          )),
+                                    ],
                                   ),
                                 ),
-                              )
+                              ),
+                              SizedBox(
+                                height: _height * 0.05,
+                                width: _width * 0.5,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text(
+                                      "SUN",
+                                      style: GoogleFonts.roboto(),
+                                    ),
+                                    Text(
+                                      "MON",
+                                      style: GoogleFonts.roboto(),
+                                    ),
+                                    Text(
+                                      "TUE",
+                                      style: GoogleFonts.roboto(),
+                                    ),
+                                    Text(
+                                      "WED",
+                                      style: GoogleFonts.roboto(),
+                                    ),
+                                    Text(
+                                      "THU",
+                                      style: GoogleFonts.roboto(),
+                                    ),
+                                    Text(
+                                      "FRI",
+                                      style: GoogleFonts.roboto(),
+                                    ),
+                                    Text(
+                                      "SAT",
+                                      style: GoogleFonts.roboto(),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: _height * 0.45,
+                                width: _width * 0.5,
+                                child: TabBarView(
+                                    controller: _tabController,
+                                    children: [
+                                      MonthCalender(
+                                        height: _height,
+                                        width: _width,
+                                      ),
+                                      WeekCalender(
+                                        height: _height,
+                                        width: _width,
+                                      ),
+                                    ]),
+                              ),
                             ],
                           ),
-                        )),
-                      ],
+                          Expanded(
+                              child: Container(
+                            height: _height * 0.6,
+                            width: _width,
+                            color: Colors.orange,
+                          ))
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );
@@ -226,56 +193,94 @@ class _AttendenceScreenState extends State<AttendenceScreen>
   }
 }
 
-class MonthCalender extends StatelessWidget {
+class MonthCalender extends StatefulWidget {
   final double height;
   final double width;
   const MonthCalender({Key? key, required this.height, required this.width})
       : super(key: key);
 
   @override
+  State<MonthCalender> createState() => _MonthCalenderState();
+}
+
+class _MonthCalenderState extends State<MonthCalender>
+    with SingleTickerProviderStateMixin {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 2),
+    vsync: this,
+  );
+  late final Animation<Offset> _offsetAnimation = Tween<Offset>(
+    begin: Offset.zero,
+    end: const Offset(15.5, 0.0),
+  ).animate(CurvedAnimation(
+    parent: _controller,
+    curve: Curves.elasticIn,
+  ));
+  @override
   Widget build(BuildContext context) {
     final int maxDate = DateTime.now().day;
-    final double _height = height;
+    final double _height = widget.height;
+    final double _width = widget.width;
     return SizedBox(
-      height: _height * 0.45,
-      child: GridView.builder(
-          itemCount: 31,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 9),
-          itemBuilder: (_, index) {
-            return Tooltip(
-              message: AttendenceScreen.daysPresent.contains(index)
-                  ? "Absent"
-                  : index > maxDate
-                      ? "NA"
-                      : "Present",
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  color: AttendenceScreen.daysPresent.contains(index)
-                      ? const Color(0xfff68554)
-                      : index > maxDate
-                          ? Colors.white
-                          : const Color(0xff4c5c78),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(74.0),
-                  ),
-                  elevation: 4.0,
-                  child: Center(
-                      child: Text(
-                    "${index + 1}",
-                    style: GoogleFonts.roboto(
-                      color: AttendenceScreen.daysPresent.contains(index)
-                          ? Colors.white
-                          : index > maxDate
-                              ? Colors.black
-                              : Colors.white,
+      height: _height * 0.8,
+      width: _width * 0.05,
+      child: GridView.count(
+        crossAxisCount: 7,
+        shrinkWrap: true,
+        children: List.generate(32, (index) {
+          return SlideTransition(
+            position: _offsetAnimation,
+            child: SizedBox(
+              height: 30,
+              width: 30,
+              child: Tooltip(
+                message: AttendenceScreen.daysPresent.contains(index)
+                    ? index + 1 > maxDate
+                        ? "NA"
+                        : "Absent"
+                    : index + 1 > maxDate
+                        ? "NA"
+                        : "Present",
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                    color: AttendenceScreen.daysPresent.contains(index)
+                        ? index + 1 > maxDate
+                            ? Colors.white
+                            : const Color(0xfff68554)
+                        : index + 1 > maxDate
+                            ? Colors.white
+                            : const Color(0xff4c5c78),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(74.0),
                     ),
-                  )),
+                    elevation: 4.0,
+                    child: Center(
+                        child: Text(
+                      "${index + 1}",
+                      style: GoogleFonts.roboto(
+                        color: AttendenceScreen.daysPresent.contains(index)
+                            ? index + 1 > maxDate
+                                ? Color(0xff4c5c78)
+                                : Colors.white
+                            : index + 1 > maxDate
+                                ? Color(0xff4c5c78)
+                                : Colors.white,
+                      ),
+                    )),
+                  ),
                 ),
               ),
-            );
-          }),
+            ),
+          );
+          ;
+        }),
+      ),
     );
   }
 }
@@ -293,11 +298,12 @@ class WeekCalender extends StatelessWidget {
     final double _height = height;
     return SizedBox(
       height: _height * 0.45,
+      width: width * 0.5,
       child: GridView.builder(
           itemCount: 7,
           cacheExtent: 9.0,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 9),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: Get.width > 1100.0 ? 7 : 5),
           itemBuilder: (_, index) {
             return Tooltip(
               margin: const EdgeInsets.all(4.0),
@@ -354,12 +360,12 @@ class CustomDayCards extends StatelessWidget {
     final double _height = constraints.maxHeight;
     final double _width = constraints.maxWidth;
     return Card(
-      elevation: 0.0,
+      elevation: 4.0,
       color: cardColor,
       child: Container(
           padding: const EdgeInsets.all(8.0),
           height: _height * 0.1,
-          width: _width * 0.6,
+          width: _width * 0.5,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -367,8 +373,6 @@ class CustomDayCards extends StatelessWidget {
               Card(
                   color: const Color(0xffc3c6c6),
                   child: SizedBox(
-                    height: _height * 0.08,
-                    width: _width * 0.08,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -386,7 +390,6 @@ class CustomDayCards extends StatelessWidget {
                     ),
                   )),
               SizedBox(
-                width: _width * 0.1,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -403,7 +406,6 @@ class CustomDayCards extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: _width * 0.1,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -419,7 +421,6 @@ class CustomDayCards extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: _width * 0.1,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
