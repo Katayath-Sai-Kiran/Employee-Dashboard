@@ -59,7 +59,7 @@ class _AttendenceScreenState extends State<AttendenceScreen>
                   child: Row(
                     children: [
                       Image.asset(
-                        "assets/logo.png",
+                        "assets/AVATAR.png",
                         fit: BoxFit.cover,
                       ),
                     ],
